@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+  </head>
+  <body>
+    <header>
+      <h1><b>This</b>App&trade;</h1>
+      <a class="iconHover" id="notificationBell">
+        <svg version="1.1" id="icon-bell" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;"
+           xml:space="preserve" class="flex-header">
+        <style type="text/css">
+        </style>
+        <g id="_x36__6_">
+        	<g>
+        		<path class="bell-path" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,
+              8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+        			c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,
+              24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+        	</g>
+        </g>
+        </svg>
+        <span class="iconNotify" data-icon="2"></span>
+      </a>
+      <div class="notifyDiv">
+        <span class="notifications">This is your first notification today!</span><br>
+        <span class="notifications">Two notifications! You're quite popular!</span>
+      </div>
+      <img class="userImage" src="images/sam.jpg" alt"Image of user Samuel Essim">
+      <span class="userName flex-header">Samuel Essim</span>
+    </header>
+
+    <nav>
+      <ul class="nav-contain">
+        <li class="nav-dash"><img src="icons/icon-dashboard.svg" alt="dashboard icon"></li>
+        <li><img src="icons/icon-members.svg" alt="members icon"></li>
+        <li><img src="icons/icon-visits.svg" alt="visits icon"></li>
+        <li><img src="icons/icon-settings.svg" alt="settings icon"></li>
+      </ul>
+    </nav>
+
+    <h2 class="dash">Dashboard</h2>
+
+    <div class="search-div">
+      <input type="search" name="search" id="search" aria-describedby="search-tip"
+      placeholder="Search">
+      <p id="search-tip">Enter your search</p>
+    </div>
+
+    <div class="mainAlert" id="theAlert">
+      <p><b>ALERT: </b>Listen very carefully, whatever you do, dont click the 'x' in the corner!</p>
+        <span class="alertClose">x</span>
+    </div>
+
+    <main>
+      <div class="mainTraffic">
+        <h2>TRAFFIC</h2>
+        <ul id="chart-buttons">
+          <li>Hourly</li>
+          <li>Daily</li>
+          <li>Weekly</li>
+          <li>Montly</li>
+        </ul>
+        <canvas id="mainTraffic"></canvas>
+      </div>
+      <div class="traffic">
+        <h2>DAILY TRAFFIC</h2>
+        <canvas id="traffic" style="position: relative; height: 200px;"></canvas>
+      </div>
+      <div class="mobileUsers">
+        <h2>MOBILE USERS</h2>
+        <canvas id="mobileUsers" style="position: relative; height: 200px;"></canvas>
+      </div>
+    </main>
+
+    <section class="social-section">
+      <h2>SOCIAL STATS</h2>
+      <ul class="social-container">
+        <li class="social-widget">
+          <svg version="1.1" id="twitter" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;"
+            xml:space="preserve">
+          <path d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,
+          0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+          	c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,
+            1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+          	c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,
+            0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+          	c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,
+            0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+          	c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
+          </svg>
+          <h2 class="twitter-heading">TWITTER</h2>
+          <p>25,333</p>
+        </li>
+        <li class="social-widget">
+          <svg enable-background="new 0 0 56.693 56.693" height="56.693px"
+            id="facebook" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M40.43,
+            21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,
+            5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,
+            10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,
+            0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg>
+            <h2 class="facebook-heading">FACEBOOK</h2>
+            <p>13,115</p>
+        </li>
+        <li class="social-widget">
+          <svg version="1.1" id="google" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          <path d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+          	c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+          	c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+          	c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+          	c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+          	c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+          	c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+          	c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+          	c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+          	c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+          	c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+          	c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+          	c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+          	c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+          	c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+          	h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
+          </svg>
+          <h2 class="google-heading">GOOGLE+</h2>
+          <p>15,875</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="membersFlex">
+      <section id="newMembers">
+      </section>
+      <section id="recentActive">
+      </section>
+    </div>
+
+    <div class="formFlex">
+      <form id="membersForm" action="" method="post">
+        <h2 class="sectionTitle">MESSAGE USER</h2>
+        <p id="error" data-error="Please enter a valid user name."></p>
+        <input type="search" name="user_search" id="userSearch"
+        placeholder="Search for User" list="dataList">
+        <datalist id="dataList"></datalist>
+        <div id="sent">
+          <p>Message sent!</p>
+          <span class="sentClose">x</span>
+        </div>
+        <p id="messageError" data-error="Please enter a message to send."></p>
+        <textarea id="userMessage" name="user_message">
+        </textarea>
+        <button id="userButton" type="submit" name="send">SEND</button>
+      </form>
+
+      <form id="settingsForm" action="" method="post">
+        <div class="settings">
+          <h2 class="sectionTitle">SETTINGS</h2>
+          <span class="settingSpan">Send Email Notifications</span>
+          <label class="switch-light switch-ios" onclick="">
+            <input id="sendEmail" type="checkbox">
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+          </label>
+          <span class="settingSpan setPublic">Set Profile to Public</span>
+          <label class="switch-light switch-ios switch-adjust" onclick="">
+            <input id="setProfile" type="checkbox">
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+          </label>
+          <select id="timeZone" name="time_zone">
+            <option value="-10.0">(GMT -10:00) Hawaii</option>
+           <option value="-9.0">(GMT -9:00) Alaska</option>
+           <option value="-8.0">(GMT -8:00) Pacific Time</option>
+           <option value="-7.0">(GMT -7:00) Mountain Time</option>
+           <option value="-6.0">(GMT -6:00) Central Time</option>
+           <option value="-5.0">(GMT -5:00) Eastern Time</option>
+           <option value="-4.0">(GMT -4:00) Atlantic Time</option>
+          </select>
+          <button id="saveButton" type="button" name="save">SAVE</button>
+          <button id="cancelButton" type="reset" name="cancel">CANCEL</button>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/members.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

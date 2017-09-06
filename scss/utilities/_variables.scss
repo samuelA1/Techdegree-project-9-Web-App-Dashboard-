@@ -1,0 +1,51 @@
+//======= COLORS ==========
+
+$icon-hover: #ffe066;
+$icon-fill: #fff;
+$user-border: #400080;
+$header-bg: #8080ff;
+$header-text: #fff;
+$nav-bg: #7733ff;
+$search-accent: #d9d9d9;
+$search-field: #f0f1f1;
+$canvas-border: #7733ff;
+$social-widget: #400080;
+$social-border: #d9d9d9;
+$social-icon: #fff;
+$social-bg: #f0f1f1;
+$border: #7733ff;
+$toggle: #7733ff;;
+$button-text: #fff;
+$button-bg: #7733ff;
+$input-bg: #f0f1f1;
+$input-focus: lavender;
+$input-text: #fff;
+$dash: grey;
+$alert-bg: #7733ff;
+$alert-text: #fff;
+$cancel: grey;
+$alertPopUp2: rgba(119, 51, 255, 0.4);
+$alertPopUp: #8080ff;
+$alertClose: #400080;
+$iconNotification: lime;
+$notificationText: #400080;
+
+
+// ======= MEDIA BREAKS =========
+
+$break-m: "(min-width: 768px)";
+$break-l: "(min-width: 1024px)";
+
+
+//========= SIZING & POSTION ===========
+
+$flexCalc: calc(100% - 80px);
+$flexCalc2: calc((100% - 80px) / 2);
+$canvasCalc1: calc((100% - 1px) / 2);
+$flex320: calc(100% - 3rem);
+$position1: absolute;
+$position2: relative;
+
+//========= DECORATION ===========
+
+$border-solid: 1px solid $border;

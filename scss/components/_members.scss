@@ -1,0 +1,143 @@
+%members {
+  list-style: none;
+  display: block;
+  li {
+    @include sizeBox(95%, 2.5% 0, auto, 4rem);
+    border-bottom: $border-solid;
+    @include media('lg') {
+      height: 3.75rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: .7rem;
+    @include sizeBox(null, 0, 0);
+    @include media('med') {
+      font-size: .9rem;
+    }
+    @include media('lg') {
+      font-size: 1.05rem;
+    }
+  }
+  img {
+    @include b-styles(null, null, 50%);
+    @include sizeBox(4rem, 0, auto 1rem auto 0, 4rem);
+    @extend %float-l;
+  }
+}
+
+.membersFlex {
+  @include media('med') {
+    @extend %floatWidth;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+#newMembers,
+#recentActive {
+  @include media('med') {
+    display: block;
+    @include flex(1, 1, $flexCalc2);
+    padding-top: .5rem;
+    border-bottom: $border-solid;
+  }
+}
+
+#recentActive {
+  @include media('med') {
+    border-left: $border-solid;
+  }
+}
+
+.new-members {
+  @extend %members;
+}
+
+.new-members li:last-child {
+  @include media('med') {
+    border-bottom: none;
+  }
+}
+
+.new-activity {
+  @extend %members;
+  position: initial;
+  z-index: -1;
+}
+
+.new-activity li:last-child {
+  @include media('med') {
+    border-bottom: none;
+  }
+}
+
+time {
+  font-size: .75rem;
+  @include media('med') {
+    font-size: 1rem;
+    position: relative;
+    right: -60%;
+    top: -35px;
+  }
+  @include media('lg') {
+    font-size: 1rem;
+    position: relative;
+    right: -70%;
+    top: -35px;
+  }
+}
+
+.user-name {
+  white-space: nowrap;
+  font-size: 1rem;
+  @include sizeBox(null, 0, .25rem 0 0 0);
+  @include media('lg') {
+    font-size: 1.25rem;
+  }
+}
+
+.activity {
+  margin-top: .5rem;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  @include media('lg') {
+    font-size: 1.25rem;
+  }
+}
+
+.active-time {
+  font-size: .75rem;
+  margin-top: .25rem;
+  @include media('med') {
+    font-size: .9rem;
+  }
+  @include media('lg') {
+    font-size: 1rem;
+  }
+}
+
+.arrow {
+  @extend %float-r;
+  padding: 0 .25rem;
+  position: relative;
+  top: -2.75rem;
+  // background: $button-bg;
+  color: $social-border;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  &:hover {
+    // background: $input-focus;
+    color: $button-bg;
+  }
+}
+
+.sectionTitle {
+  @include media('med') {
+    float: none;
+    margin: 0;
+    clear: none;
+    margin-left: .5rem;
+  }
+}

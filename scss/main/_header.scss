@@ -1,0 +1,151 @@
+header {
+  background: $header-bg;
+  display: flex;
+  justify-content: space-between;
+  color: $header-text;
+  padding: 0 .5rem;
+  @include media('med') {
+    padding: .5rem 1rem;
+  }
+}
+
+h1 {
+  font-size: 1rem;
+  flex-basis: 80%;
+  align-self: center;
+  font-weight: normal;
+}
+
+h1,
+.flex-header {
+  align-self: center;
+}
+
+#icon-bell {
+  @include sizeBox(
+  1.5rem,
+  0 1.5rem,
+  null,
+  1.5rem);
+  overflow: visible;
+  cursor: pointer;
+  border-right: 1px solid $user-border;
+
+}
+
+.bell-path {
+  fill: $icon-fill;
+  transition: all .4s ease-in-out;
+}
+
+#icon-bell:hover .bell-path,
+#icon-bell:focus .bell-path {
+  fill: $icon-hover;
+}
+
+.flex-header {
+  justify-content: flex-end;
+}
+
+.userName {
+  white-space: nowrap;
+  padding: .5rem;
+  @include media('lg') {
+    font-size: 1.25rem;
+  }
+}
+
+.userImage {
+  @include sizeBox(30px, null, .25rem 0 0 1rem, 30px);
+  border-radius: 50%;
+}
+
+.iconNotify {
+  position: relative;
+  z-index: 200;
+  &::after {
+    position: absolute;
+    z-index: 200;
+    @include b-styles($iconNotification, null, 50%);
+    @include sizeBox(.5rem, .1rem .25rem .4rem .25rem, 0, .5rem);
+    content: attr(data-icon);
+    font-size: .7rem;
+    color: $notificationText;
+    right: 20px;
+    top: -3px;
+    text-align: center;
+  }
+}
+
+
+
+@keyframes notifyHop {
+  from {top: -5px;}
+  to {top: 3px;}
+}
+
+.iconHover:hover .iconNotify::after {
+  animation: notifyHop .25s ease-in .3s infinite;
+}
+
+.iconHover {
+  align-self: center;
+  display: inline-flex;
+}
+
+@keyframes dropDown {
+  from {
+    position: absolute;
+    z-index: -5;
+    width: 280px;
+    top: 5px;
+    left: 10%;
+    opacity: 0;
+  }
+  to {
+    position: absolute;
+    z-index: 1000;
+    @include sizeBox(90%, .5rem);
+    @include b-styles($header-bg, solid 2px $user-border, .5rem);
+    line-height: 2;
+    font-size: .85rem;
+    top: 75px;
+    left: 3%;
+    opacity: 1;
+  }
+}
+
+.notifyDiv {
+  position: absolute;
+  z-index: -5;
+  width: 280px;
+  left: 0;
+  opacity: 0;
+}
+
+.notifications {
+  color: $input-bg;
+  padding: .1rem;
+  position: relative;
+  &::after {
+    color: $alertClose;
+    font-size: .6rem;
+    font-weight: bold;
+    content: "X";
+    padding: .05rem .45rem 0 .45rem;
+    margin-left: 5px;
+    cursor: default;
+    transition: all .3s ease-in-out;
+    @include b-styles($input-bg, null, 50%);
+    position: absolute;
+    bottom: 0;
+  }
+  &:hover::after {
+    background: $alertClose;
+    color: $input-focus;
+  }
+}
+
+.notifyShow {
+  animation: dropDown .2s ease-out forwards;
+}

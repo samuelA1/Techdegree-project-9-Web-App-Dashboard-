@@ -1,0 +1,29 @@
+.search-div {
+  @include sizeBox(60%, .1rem, 0 0 1rem 0);
+  float: right;
+  text-align: right;
+  background: $search-field;
+  border-left: 1px solid $search-accent;
+  border-bottom: 1px solid $search-accent;
+  @include media('med') {
+    @include sizeBox(67%, .25rem);
+    float: right;
+  }
+  @include media('lg') {
+    width: 80%;
+  }
+  p {
+    display: none;
+  }
+}
+
+#search {
+  @include sizeBox(75%, .5rem, .25rem .5rem);
+  @include b-styles(null, 1px solid $search-accent, .3rem);
+  @include media('med') {
+    @include sizeBox(35%, null, .5rem 1rem);
+  }
+  &::placeholder {
+    color: $search-accent;
+  }
+}

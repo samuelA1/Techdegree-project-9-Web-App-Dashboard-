@@ -1,0 +1,45 @@
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  position: initial;
+  z-index: 1;
+}
+
+body {
+  @include media('med') {
+    height: 230vh;
+  }
+  @include media('med') {
+    height: 250vh;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  margin-left: 1rem;
+  @include media('med') {
+    float: none;
+    margin: 0;
+    clear: none;
+    white-space: nowrap;
+  }
+}
+
+.dash {
+  @extend %float-l;
+  margin-left: 5.5%;
+  font-size: 1rem;
+  color: $dash;
+  @include media('med') {
+    margin-top: 1.4rem;
+  }
+  @include media('lg') {
+    margin-left: 3%;
+  }
+}
+
+main h2 {
+  @extend %float-l;
+  clear: both;
+  margin: 1rem auto 0 .5rem;
+}

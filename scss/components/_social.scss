@@ -1,0 +1,119 @@
+.social-section {
+  @include media('med') {
+    @extend %floatWidth;
+    border-top: $border-solid;
+    border-bottom: $border-solid;
+    padding-top: 1rem;
+  }
+  h2 {
+    margin-bottom: 0;
+    @include media('med') {
+      margin-bottom: -2rem;
+      margin-left: 8px;
+    }
+  }
+}
+
+.social {
+  &-container {
+    list-style: none;
+    display: flex;
+    // border-top: $border-solid;
+    border-bottom: $border-solid;
+    @include sizeBox(null, 1rem 0);
+    @include flex(1, null, null, nowrap, column);
+    @include media('med') {
+      @include flex(1, 1, null, nowrap, row);
+      justify-content: space-around;
+      @include sizeBox(null, 2rem 0, .5rem 0);
+      border: none;
+    }
+  }
+  &-widget {
+    @include sizeBox(90%, null, .5rem auto);
+    max-width: 375px;
+    min-width: 294px;
+    @include b-styles(
+    $social-bg,
+    2px solid $social-border,
+    .5rem);
+    @include media('med') {
+      @include sizeBox(30%, null, 0 1%);
+      min-width: inherit;
+      max-width: 275px;
+      max-height: 100px;
+    }
+    @include media('lg') {
+      @include sizeBox(35%, null, 0 1%);
+      min-width: inherit;
+      max-width: 315px;
+      max-height: 100px;
+    }
+    svg {
+      @include sizeBox(2rem, 1rem, 1rem 0 1rem 1rem, 2rem);
+      @include b-styles($social-widget, null, 50%);
+      fill: $social-icon;
+      overflow: visible;
+    }
+    p {
+      font-size: 2.5rem;
+      @extend %floatNposition;
+      clear: right;
+      @include sizeBox(null, 0, 0);
+      transform: translate(-35%, 1rem);
+      @include media('med') {
+        font-size: 2rem;
+        transform: translate(-1.5rem, 2.5rem);
+      }
+      @include media('lg') {
+        font-size: 2.75rem;
+        transform: translate(-3rem, 2rem);
+      }
+    }
+  }
+}
+
+.google-heading,
+.twitter-heading,
+.facebook-heading {
+  font-size: 1rem;
+  color: $social-widget;
+  @extend %floatNposition;
+  @include sizeBox(null, 0, 0);
+  @include media('med') {
+    font-size: 1rem;
+  }
+  @include media('lg') {
+    font-size: 1.13rem;
+  }
+}
+
+.google-heading {
+  transform: translate(-5.5rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-2.75rem, 1.5rem);
+  }
+  @include media('lg') {
+    transform: translate(-6rem, 1.25rem);
+  }
+}
+
+.twitter-heading {
+  transform: translate(-6.1rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-3.5rem, 1.5rem);
+  }
+  @include media('lg') {
+    transform: translate(-7rem, 1.25rem);
+  }
+}
+
+.facebook-heading {
+  transform: translate(-5rem, 1.25rem);
+  @include media('med') {
+    transform: translate(-2.25rem, 1.5rem);
+  }
+  @include media('lg') {
+    transform: translate(-5.5rem, 1.25rem);
+  }
+}

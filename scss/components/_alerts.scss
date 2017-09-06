@@ -1,0 +1,99 @@
+@keyframes alertFade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes popup {
+  from {opacity: 0; z-index: -1;}
+  to {opacity: 1; z-index: 100;}
+}
+
+.mainAlert {
+  @include sizeBox(89%, .5rem, 1rem auto);
+  @include b-styles($alert-bg, null, .5rem);
+  clear: both;
+  color: $alert-text;
+  opacity: 0;
+  animation: 1s ease-in .3s forwards alertFade;
+  @include media('med') {
+    float: right;
+    @include sizeBox(80%, null, 0 4% 1rem 0, 1.3rem);
+    clear: none;
+  }
+  @include media('lg') {
+    margin-right: 7%;
+  }
+  p {
+    font-size: .88rem;
+    @include sizeBox(95%, 0, auto);
+  }
+}
+
+.alertClose {
+  @extend %alertClose;
+}
+
+.sentClose {
+  @extend %alertClose;
+}
+
+#sent {
+  text-align: center;
+  font-size: 1rem;
+  color: $alert-text;
+  white-space: nowrap;
+  @include sizeBox(90%, .5rem, auto, 3.5rem);
+  @include b-styles($alertPopUp2, null, .5rem);
+  position: absolute;
+  left: 2.5%;
+  z-index: -1;
+  opacity: 0;
+  @include media('med') {
+    @include sizeBox(38%, null, 0 0 0 85px);
+  }
+}
+
+.show {
+  animation: .5s ease-in .1s forwards popup;
+}
+
+#requireUser {
+  display: none;
+  z-index: 101;
+}
+
+#requireMessage {
+  display: none;
+  z-index: 102;
+}
+
+.hide {
+  display: none;
+}
+
+#error,
+#messageError {
+  position: relative;
+  opacity: 0;
+  z-index: -1;
+}
+
+#error::after {
+  @extend %errorAfter;
+  top: 54px;
+}
+
+#error::before {
+  @extend %errorBefore;
+  top: 44px;
+}
+
+#messageError::after {
+  @extend %errorAfter;
+  top: 147px;
+}
+
+#messageError::before {
+  @extend %errorBefore;
+  top: 137px;
+}

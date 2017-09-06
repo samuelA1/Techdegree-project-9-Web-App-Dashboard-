@@ -1,0 +1,44 @@
+.formFlex {
+  @include media('med') {
+    display: flex;
+    @include flex(null, null, null, nowrap, row);
+    @extend %floatWidth;
+
+  }
+}
+
+#membersForm {
+  border-bottom: $border-solid;
+
+}
+
+#membersForm,
+#settingsForm {
+  border-bottom: $border-solid;
+  @include media('med') {
+    @include flex(1, 1, $flexCalc2);
+    padding-top: .5rem;
+    border-bottom: none;
+  }
+}
+
+#userSearch {
+  @extend %inputs;
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
+
+#userMessage {
+  @include sizeBox(80%, .5rem 0, .75rem 10%, 7rem);
+  @include b-styles($input-bg, none, .5rem);
+  text-indent: -.5rem;
+  transition: all .5s ease-in-out;
+  &:focus {
+    @include b-styles($input-focus);
+  }
+}
+
+button[name="send"] {
+  @extend %button;
+}

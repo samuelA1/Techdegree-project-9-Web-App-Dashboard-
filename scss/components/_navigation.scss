@@ -1,0 +1,52 @@
+nav {
+  // display: flex;
+  background: $nav-bg;
+  width: 100%;
+  height: 3rem;
+  @include media('med') {
+    float: left;
+    width: 5rem;
+    // flex-direction: column;
+    height: inherit;
+  }
+  li {
+    @include sizeBox(null, 1rem 0, 0, 1.5rem);
+    list-style: none;
+    opacity: .5;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    transition: all .3s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    img {
+    max-width: 100%;
+    }
+    @include media('med') {
+      flex-direction: column;
+      justify-content: flex-start;
+      @include sizeBox(2rem, 1rem 0, 0 auto, 2rem);
+    }
+  }
+}
+
+.nav-contain {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  @include media('med') {
+    flex-direction: column;
+    height: 20rem;
+  }
+}
+
+.nav-dash {
+  opacity: 1;
+  &:hover {
+    opacity: .5;
+  }
+}

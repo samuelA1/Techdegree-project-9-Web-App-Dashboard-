@@ -1,0 +1,91 @@
+@media #{$break-m} {
+  %floatWidth {
+    width: $flexCalc;
+    float: right;
+  }
+}
+
+%floatNflex {
+  float: right;
+  display: flex;
+  width: $flex320;
+}
+
+%display-flex {
+  display: flex;
+}
+
+%float-l {
+  float: left;
+}
+
+%float-r {
+  float: right;
+}
+
+%floatNposition {
+  float: right;
+  // position: relative;
+  // top: 1.25rem;
+  // right: 18%;
+}
+
+%button {
+  @include sizeBox(78%, 1%, 1.5rem 10%, 2.5rem);
+  color: $button-text;
+  @include b-styles($button-bg, none, .5rem);
+  transition: all .5s ease-in-out;
+  &:focus,
+  &:hover {
+    color: $input-text;
+    opacity: .7;
+  }
+}
+
+%inputs {
+  @include sizeBox(80%, .5rem 0, .75rem 10%);
+  @include b-styles($input-bg, none, .5rem);
+  transition: all .5s ease-in-out;
+  text-indent: .75rem;
+  &:focus {
+    @include b-styles($input-focus);
+  }
+}
+
+%errorAfter {
+  position: absolute;
+  z-index: 100;
+  color: $alert-text;
+  @include sizeBox(250px, .3rem, auto);
+  @include b-styles($alertPopUp, null, .5rem);
+  content: attr(data-error);
+  left: 10%;
+}
+
+%errorBefore {
+  position: absolute;
+  z-index: 100;
+  border-style: solid;
+  border-width: 0 .3rem .65rem .3rem;
+  border-color: transparent transparent $alertPopUp transparent;
+  left: 25%;
+  content: "";
+}
+
+%alertClose {
+  color: $alertClose;
+  font-size: .8rem;
+  font-weight: bold;
+  @extend %float-r;
+  position: relative;
+  top: -.85rem;
+  right: -.2rem;
+  @include b-styles($input-focus, null, 50%);
+  padding: 0 .35rem .2rem .35rem;
+  cursor: default;
+  transition: all .3s ease-in-out;
+  &:hover {
+    background: $alertClose;
+    color: $input-focus;
+  }
+}

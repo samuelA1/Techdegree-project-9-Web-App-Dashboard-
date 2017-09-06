@@ -1,0 +1,47 @@
+@mixin flex(
+$flex: null,
+$flexGrow: null,
+$flexBasis: null,
+$flexWrap: null,
+$flexDirect: null
+) {
+  flex: $flex;
+  flex-grow: $flexGrow;
+  flex-basis: $flexBasis;
+  flex-wrap: $flexWrap;
+  flex-direction: $flexDirect;
+  @content;
+}
+
+@mixin media($size) {
+  @if $size == 'med' {
+    @media #{$break-m} {
+      @content;
+    }
+  } @else if $size == 'lg' {
+    @media #{$break-l} {
+      @content;
+    }
+  }
+}
+
+@mixin sizeBox(
+$width: null,
+$pad: null,
+$margin: null,
+$height: null) {
+  width: $width;
+  padding: $pad;
+  margin: $margin;
+  height: $height;
+}
+
+@mixin b-styles(
+$bg: null,
+$border: null,
+$bdr-rad: null
+) {
+  background: $bg;
+  border: $border;
+  border-radius: $bdr-rad;
+}
